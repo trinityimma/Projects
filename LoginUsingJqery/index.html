@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login and Signup form using Jquery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".login-form").hide();
+			$(".login").css("background", "none");
+
+			$(".login").click(function(){
+				$(".signup-form").hide();
+				$(".login-form").show();
+				$(".signup").css("background", "none");
+				$(".login").css("background", "#fff");
+			});
+
+			$(".signup").click(function(){
+				$(".login-form").hide();
+				$(".signup-form").show();
+				$(".login").css("background", "none");
+				$(".signup").css("background", "#fff");
+			});
+
+			$(".btn").clik(function(){
+				$(".input").val("");
+			})
+		});
+	</script>
+</head>
+<body>
+<div class="container"> 
+	<div class="signup">sign Up</div>
+	<div class="login">log In</div>
+
+	<div class="signup-form">
+		<input class="input" type="text"  placeholder="Your Email Address" name=""><br>
+		<input class="input" type="text"  placeholder="Choose a UserName" name=""><br>
+		<input class="input" type="password"  placeholder="Choose a Password" name=""><br>
+		<div class="btn">create account</div>
+	</div>
+
+	<div class="login-form">
+		<input class="input" type="text" placeholder="Email or UserName" name=""><br>
+		<input class="input" type="password" placeholder="Password" name=""><br>
+		<div class="btn">log in</div>
+		<span><a href="#">I Forgot my Username or Password</a></span>
+	</div>
+</div>
+</body>
+</html>

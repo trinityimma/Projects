@@ -1,0 +1,33 @@
+/*border color: #bdc3c7 20px
+date color: #34898db
+h2 color #2c3e50
+
+font: sans pro*/
+
+body
+{
+	margin: 20px auto;
+	border: 20px solid #bdc3c7;
+	padding: 20px;
+	width: 80%;
+	max-width: 700px;
+	font-family: Source Sans Pro;
+}
+
+.date{
+	color: #3489db;
+	letter-spacing: 0.2rem;
+
+}
+
+h2{
+	color: #2c3e50;
+	font-size: 2.0rem;
+}
+p:nth-of-type(1){
+	border-left: 5px solid #bdc3c7;
+	padding-left: 5px;
+}
+hr{
+	border: 0.5px solid rgba(0,0,0,0.05);
+}

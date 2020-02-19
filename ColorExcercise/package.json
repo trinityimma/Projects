@@ -1,0 +1,20 @@
+{
+  "name": "RGBColorGame",
+  "short_name": "RGB Game",
+  "version": "1.0.0",
+  "description": "A game to help developers master RGB colors",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Immaculata-Mary Muoghalu",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.1"
+  },
+  "icons": [{
+    "src": "icon-256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }]
+}
