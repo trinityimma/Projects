@@ -98,7 +98,7 @@ ul{
 
 .nav .nav-items .nav-link:hover{
      background-color: var(--midnight);
-    color: var(--white);
+     color: var(--white);
 }
 
 .nav .nav-items .nav-link:hover a{

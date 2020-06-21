@@ -11,7 +11,7 @@ body{
 }
 
 nav{
-    background: #0082e6;
+    background: #000;
     height: 80px;
     width: 100%;
 }
@@ -76,6 +76,12 @@ section{
 }
 
 @media (max-width: 858px){
+
+    label.logo{
+        padding: 0 !important;
+        padding-left: 20px !important;
+    }
+
     .checkbtn{
         display: block;
     }
@@ -110,4 +116,8 @@ section{
         left: 0;
     }
 }
+/*
+@media only screen and (max-width: 420px){
 
+}
+*/

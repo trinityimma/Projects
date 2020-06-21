@@ -90,7 +90,7 @@ p{
 .nav{
     background: white;
     padding: 0 2rem;
-    height: 0rem;
+    height: 10vh;
     min-height: 10vh;
     overflow: hidden;
     transition:height 1s ease-in-out;
@@ -183,6 +183,7 @@ main .site-title .site-background{
 main .site-title h1,h3{
     margin: .3rem;
 }
+
 main .site-title .btn{
     margin: 1.8rem;
     background:var(--sky)
@@ -233,7 +234,7 @@ main .blog-content .btn-blog:hover{
     padding: 1rem 2.5rem;
 }
 
-main .blog-content span{
+main .blog-content span{ 
     display:block;
 }
 
@@ -255,7 +256,7 @@ section .container .owl-nav{
 .owl-theme .owl-nav [class*='owl-']:hover{
     background: transparent;
     color: var(--midnight);
-} 
+}   
 
 .owl-theme .owl-nav [class*='owl-']{
     outline: none;
@@ -270,6 +271,7 @@ main .site-content{
 }
 main .post-content{
     width: 100%;
+    margin-bottom: 5rem;
 }
 
 main .site-content .post-content > .post-image, .post-title{
@@ -286,7 +288,7 @@ main .site-content .post-content > .post-image .post-info{
     border-radius: 3rem;
 }
 
-main .site-content .post-content > .post-image > div{
+main .site-content .post-image > div{
     overflow: hidden;
 }
 
@@ -314,15 +316,10 @@ main .post-content .post-title a{
     background: var(--sky);
 }
 
-.site-content .post-content .post-title .post-btn:hover{
-    
-}
-
-
 .site-content .pagination{
     justify-content: center;
     color: var(--text-gray);
-    margin: 4rem;
+    margin: 4rem 0;
 }
 .site-content .pagination a{
     padding: .6rem .9rem;
@@ -471,7 +468,7 @@ footer.footer .follow div i{
     color: var(--white);
     padding: 0 .4rem;
 }
-
+   
 footer.footer .rights{
     justify-content: center;
     font-family: var(--Josefin);

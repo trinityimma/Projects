@@ -30,12 +30,12 @@ $(document).ready(function(){
         dots: false,
         nav: true,
         navText: [$('.owl-navigation .owl-nav-prev'),$('.owl-navigation .owl-nav-next')],
-        reponsive:responsive
+        responsive:responsive
     });
 
 
     // Click to scroll up
-    $('.move-up span').click (function(){
+    $('.move-up span').click(function(){
         $('html, body').animate({
             scrollTop: 0
         }, 1000); 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <input id="default-btn" type="file" hidden >
+        <div class="btn">
+            <button onclick="active()" id="custom-btn">Choose a file</button>
+        </div>
+        <div class="file-name"></div>
+    </div>
+    <script>
+        const defaultBtn = document.querySelector("#default-btn");
+        const customBtn = document.querySelector("#custom-btn");
+        const fileName = document.querySelector(".file-name");
+        let regExp = /[0-9a-zA-Z\^\&\'\@\(\)\{\}\[\]\,$\=\!\-\#\.\%\+\~\_]+$/;
+        function active(){
+            defaultBtn.click();
+        }
+        defaultBtn.addEventListener("change", function(){
+            if(this.value){
+                fileName.style.display = "block";
+                fileName.textContent = this.value.match(regExp);
+            } else{
+                fileName.style.display = "block"
+                fileName.textContent = "No file Chosen";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>Sign Up</header>
+        <form action="#">
+            <div class="field">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Full Name">
+            </div>
+            <div class="field">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="error-text"></div>
+            <div class="field">
+                <input class="input" onkeyup="active()" id="pswrd_1" type="password" placeholder="Password">
+                <span class="showBtn">Show</span>
+            </div>
+            <div class="indicator">
+                <span class="weak"></span>
+                <span class="medium"></span>
+                <span class="strong"></span>
+            </div>
+            <div class="text">Your password is too weak</div>
+            <div class="field">
+                <input onkeyup="active_2()" disabled id="pswrd_2" type="password" placeholder="Confirm Password">
+                <div class="show">Show</div>  
+            </div>
+            <button disabled>Check</button>
+        </form>
+    </div>
+
+    <script>
+        const indicator = document.querySelector(".indicator");
+        const input = document.querySelector(".input");
+        const weak = document.querySelector(".weak");
+        const medium = document.querySelector(".medium");
+        const strong = document.querySelector(".strong");
+        const text = document.querySelector(".text");
+        const pswrd_1 = document.querySelector("#pswrd_1");
+        const pswrd_2 = document.querySelector("#pswrd_2");
+        const errorText = document.querySelector(".error-text");
+        const btn = document.querySelector("button");
+        const showBtn = document.querySelector(".show");
+        let regExpWeak = /[a-z]/;
+        let regExpMedium = /d+/;
+        let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+        function active(){
+            if(input.value != ""){
+                indicator.style.display = "block";
+                indicator.style.display = "flex";
+            }else{
+                indicator.style.display = "none";
+
+            }
+            if(pswrd_1.value.length >= 6){
+                btn.removeAttribute("disabled", "");
+                btn.classList.add("active");
+                pswrd_2.removeAttribute("disabled", "");
+            }else{
+                btn.setAttribute("disabled", "");
+                btn.classList.remove("active");
+                pswrd_2.setAttribute("disabled", "");
+            }
+        }
+
+        btn.onclick = function(){
+            if(pswrd_1.value != pswrd_2.value){
+                errorText.style.display = "block";
+                errorText.classList.remove("matched");
+                errorText.textContent = "Password does not match!"
+                return false;
+            }else{
+                errorText.style.display = "block";
+                errorText.classList.add("matched");
+                errorText.textContent = "Password Matched!"
+                // return false;
+            }
+        }  
+        function active_2(){
+            if(pswrd_2.value != ""){
+                showBtn.style.display = "block";
+                showBtn.onclick = function(){
+                    if((pswrd_1.type == "password") && (pswrd_2.type == "password")){
+                        pswrd_1.type = "text";
+                        pswrd_2.type = "text";
+                        this.textContent = "Hide";
+                        this.classList.add("active");
+                    } else{
+                        pswrd_1.type = "password";
+                        pswrd_2.type = "password";
+                        this.textContent = "Show";
+                        this.classList.remove("active");
+                    }
+                }
+            }else{
+                showBtn.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
